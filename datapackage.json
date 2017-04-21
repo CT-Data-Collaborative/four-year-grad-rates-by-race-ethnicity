@@ -67,12 +67,12 @@
           "dimension": true, 
             "constraints": {
 		        "enum": [
-              "American Indian or Alaska Native", 
-              "Asian", 
-              "Black or African American",
-              "Hispanic/Latino of any race", 
-              "Native Hawaiian or Other Pacific Islander",
-              "Two or More Races", 
+              "Asian",
+              "Black",
+              "Hawaiian or Pacific Islander",
+              "Hispanic",
+              "Indian or Alaska Native",
+              "Two or More Races",
               "White"
             ]
 			    }			    
