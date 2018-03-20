@@ -21,7 +21,7 @@
   }],
   "contributor": [],
   "resources": [{
-    "path": "data/four_year_grad_rate_by_race_ethnicity_2011-2015.csv",
+    "path": "data/four_year_grad_rate_by_race_ethnicity_2011-2016.csv",
     "format": "csv",
     "schema": {
       "fields": [{
@@ -84,7 +84,7 @@
       }
     }
   ],
-  "last_modified": "04/11/2017",
+  "last_modified": "03/20/2018",
   "ckan_extras": {
     "full_description": {
       "ckan_name": "Full Description",
@@ -93,7 +93,7 @@
     },
     "suppression": {
       "ckan_name": "Suppression",
-      "value": "",
+      "value": "Disaggregations where either the numerator is less than 6 or the denominator is less than 20 are suppressed.",
       "type": "string"
     },
     "technical_notes": {
@@ -134,12 +134,12 @@
     },
     "years_in_catalog": {
       "ckan_name": "Years in Catalog",
-      "value": ["2010-2011", "2011-2012", "2012-2013", "2013-2014", "2014-2015"],
+      "value": ["2010-2011", "2011-2012", "2012-2013", "2013-2014", "2014-2015", "2015-2016"],
       "type": "array"
     },
     "latest_year": {
       "ckan_name": "Latest Year Available",
-      "value": "2014-2015",
+      "value": "2015-2016",
       "type": "string"
     },
     "disabled_views": {
@@ -165,7 +165,7 @@
 			"value": {
 				"Measure Type": "Number",
 		 		"District": "Connecticut",
-		 		"Year": ["2014-2015"],
+		 		"Year": ["2015-2016"],
 		 		"Variable": "Total Cohort Count"
 			},
 		  	"type": "object"
@@ -246,17 +246,32 @@
         "number type": "int",
         "value": 7
       } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "District": "Bloomfield School District",
+        "Year": "2015-2016", 
+        "Variable": "Still Enrolled After Four Years Rate",
+        "Race/Ethnicity": "Indian or Alaska Native",
+        "Measure Type": "Percent" 
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": -9999
+      } 
     }
   ],
   "dimension_groups": [
     {
       "Race/Ethnicity": [
-        "American Indian or Alaska Native", 
-        "Asian", 
-        "Black or African American",
-        "Hispanic/Latino of any race", 
-        "Native Hawaiian or Other Pacific Islander",
-        "Two or More Races", 
+        "Asian",
+        "Black",
+        "Hawaiian or Pacific Islander",
+        "Hispanic",
+        "Indian or Alaska Native",
+        "Two or More Races",
         "White"         
       ],
       "Variable": [
