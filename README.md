@@ -1,6 +1,6 @@
 Four-Year-Grad-Rates-by-Race-Ethnicity
 
-Four-Year Graduation Rate reports 'graduation' counts and rates and 'still enrolled' counts and rates for both graduates and non-graduates, per subgroup.
+Four-Year Graduation Rate reports 'graduation' counts and rates and 'still enrolled' counts and rates for both graduates and non-graduates, per race-ethnicity.
 
 Data Source: <http://edsight.ct.gov/>
 
